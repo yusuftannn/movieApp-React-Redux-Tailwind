@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Movies from './pages/Movies';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import MovieDetail from './pages/MovieDetail';
 
 function App() {
   const [myList, setMyList] = useState([]);
@@ -41,6 +42,7 @@ function App() {
           path={ROUTES.MYLIST}
           element={<MyList myList={myList} removeFromMyList={removeFromMyList} />}
         />
+        <Route path="/movie/:movieId" component={MovieDetail} />
       </Routes>
     </BrowserRouter>
     </Provider>
